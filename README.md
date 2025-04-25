@@ -1,54 +1,107 @@
-# React + TypeScript + Vite
+# 🧠 AI Character Chat App (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun, interactive chat interface built with **React** and **Vite**, allowing users to:
 
-Currently, two official plugins are available:
+- Talk to AI-powered characters like Tony Stark or Cleopatra
+- Choose different AI models (GPT-3.5, GPT-4, Claude, etc.) via OpenRouter
+- Listen to responses with voice output (TTS)
+- See which models are free
+- Save chat history locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🧙‍♂️ **Chat with AI Characters** – Select from a growing list of fictional or historical personas
+- 🧠 **Model Selector** – Choose from GPT, Claude, Mistral, and more through OpenRouter
+- 🟢 **Free Model Flags** – Instantly see which models cost $0
+- 🖼️ **Model Logos** – Logos next to model names for a cleaner UX
+- 🔊 **TTS Output** – Read AI replies aloud with voice selection
+- 💾 **Chat History** – Automatically stored in `localStorage` for persistent sessions
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🧱 Tech Stack
+
+- **React + Vite** – For a lightning-fast frontend
+- **OpenRouter API** – To connect to various LLMs
+- **Web Speech API** – For text-to-speech support
+- **TailwindCSS** – Clean and modern UI
+- **LocalStorage** – To persist chat history
+
+---
+
+## 🗂️ Project Structure
+
+```
+src/
+├── components/
+│   ├── ChatWindow.jsx        # Chat interface and layout
+│   ├── ModelSelector.jsx     # Dropdown for choosing LLM
+│   ├── VoiceSelector.jsx     # Dropdown for TTS voices
+│   ├── MessageBubble.jsx     # Styles user and AI messages
+├── lib/
+│   └── openai.js             # Handles fetch requests to OpenRouter API
+├── utils/
+│   └── localStorage.js       # Save/load chat history
+├── App.jsx                   # Main component
+└── main.jsx                  # App entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔧 Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/ai-character-chat.git
+cd ai-character-chat
 ```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env` file in the root:
+
+```env
+VITE_OPENROUTER_API_KEY=your_openrouter_key_here
+```
+
+> ✅ You can use many models for free — no credit card needed for OpenRouter.
+
+### 4. Run the app
+
+```bash
+npm run dev
+```
+
+---
+
+## 💡 Ideas for Future Features
+
+- 🔐 User login + backend storage
+- 🎭 Custom character creator
+- 📤 Share or export conversations
+- 🎨 Light/Dark themes
+- 🧩 Plugin or tool integrations (memory, file access, etc.)
+
+---
+
+## 🙌 Credits
+
+- [OpenRouter.ai](https://openrouter.ai/)
+- [OpenAI](https://openai.com/)
+- [Claude by Anthropic](https://www.anthropic.com/)
+- [Vite](https://vitejs.dev/)
+
+---
+
+## 📜 License
+
+MIT — free to use, adapt, and remix.
